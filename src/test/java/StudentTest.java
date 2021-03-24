@@ -1,6 +1,8 @@
 import domain.Nota;
 import domain.Student;
 import domain.Tema;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import repository.NotaXMLRepository;
 import repository.StudentXMLRepository;
@@ -22,8 +24,8 @@ public class StudentTest {
 
     private Service service;
 
-    /*public void functie() throws Exception
-    {
+    @BeforeEach
+    public void setUp() throws Exception {
         Path source = Paths.get("studenti.xml");
         Files.copy(source, source.resolveSibling("studenti_backup.xml"), StandardCopyOption.REPLACE_EXISTING);
 
@@ -39,27 +41,8 @@ public class StudentTest {
         NotaXMLRepository fileRepository3 = new NotaXMLRepository(notaValidator, "note.xml");
 
         service = new Service(fileRepository1, fileRepository2, fileRepository3);
-    }*/
 
-//    @BeforeEach
-//    public void setUp() throws Exception {
-//        Path source = Paths.get("studenti.xml");
-//        Files.copy(source, source.resolveSibling("studenti_backup.xml"), StandardCopyOption.REPLACE_EXISTING);
-//
-//        Path source2 = Paths.get("studenti_testing.xml");
-//        Files.copy(source2, source2.resolveSibling("studenti.xml"), StandardCopyOption.REPLACE_EXISTING);
-//
-//        Validator<Student> studentValidator = new StudentValidator();
-//        Validator<Tema> temaValidator = new TemaValidator();
-//        Validator<Nota> notaValidator = new NotaValidator();
-//
-//        StudentXMLRepository fileRepository1 = new StudentXMLRepository(studentValidator, "studenti.xml");
-//        TemaXMLRepository fileRepository2 = new TemaXMLRepository(temaValidator, "teme.xml");
-//        NotaXMLRepository fileRepository3 = new NotaXMLRepository(notaValidator, "note.xml");
-//
-//        service = new Service(fileRepository1, fileRepository2, fileRepository3);
-//
-//    }
+    }
 
     @Test
     public void testIdUnique()
@@ -134,15 +117,15 @@ public class StudentTest {
     }
 
 
-//    @AfterEach
-//    public void tearDown() throws Exception
-//    {
-//        Path source = Paths.get("studenti_backup.xml");
-//        Files.copy(source, source.resolveSibling("studenti.xml"), StandardCopyOption.REPLACE_EXISTING);
-//
-//        Files.delete(source.resolveSibling("studenti_backup.xml"));
-//
-//    }
+    @AfterEach
+    public void tearDown() throws Exception
+    {
+        Path source = Paths.get("studenti_backup.xml");
+        Files.copy(source, source.resolveSibling("studenti.xml"), StandardCopyOption.REPLACE_EXISTING);
+
+        Files.delete(source.resolveSibling("studenti_backup.xml"));
+
+    }
 
 
 }
