@@ -83,37 +83,37 @@ public class StudentTest {
     @Test
     public void testGroupMinValueMinus1()
     {
-        assertEquals(0, service.saveStudent("12", "Petrica", 109), "If the group is lower than min value, the student should NOT be added");
+        assertEquals(0, service.saveStudent("12", "Petrica", 110), "If the group is lower than min value, the student should NOT be added");
     }
 
     @Test
     public void testGroupMinValue()
     {
-        assertEquals(1, service.saveStudent("13", "Petrica", 110), "If the group is equal to min value, the student should be added");
+        assertEquals(1, service.saveStudent("13", "Petrica", 111), "If the group is equal to min value, the student should be added");
     }
 
     @Test
     public void testGroupMinValuePlus1()
     {
-        assertEquals(1, service.saveStudent("14", "Petrica", 111), "If the group is higher than min value, the student should be added");
+        assertEquals(1, service.saveStudent("14", "Petrica", 112), "If the group is higher than min value, the student should be added");
     }
 
     @Test
     public void testGroupMaxValueMinus1()
     {
-        assertEquals(1, service.saveStudent("15", "Petrica", 937), "If the group is lower than max value, the student should be added");
+        assertEquals(1, service.saveStudent("15", "Petrica", 936), "If the group is lower than max value, the student should be added");
     }
 
     @Test
     public void testGroupMaxValue()
     {
-        assertEquals(1, service.saveStudent("16", "Petrica", 938), "If the group is equal to max value, the student should be added");
+        assertEquals(1, service.saveStudent("16", "Petrica", 937), "If the group is equal to max value, the student should be added");
     }
 
     @Test
     public void testGroupMaxValuePlus1()
     {
-        assertEquals(0, service.saveStudent("17", "Petrica", 939), "If the group is higher than max value, the student should NOT be added");
+        assertEquals(0, service.saveStudent("17", "Petrica", 938), "If the group is higher than max value, the student should NOT be added");
     }
 
 
