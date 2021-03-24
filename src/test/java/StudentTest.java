@@ -77,7 +77,7 @@ public class StudentTest {
     @Test
     public void testNameEmpty()
     {
-        assertThrows(ValidationException.class, () -> service.saveStudent("8", "", 505), "If the name is empty the student should NOT be added");
+        assertEquals(0, service.saveStudent("8", "", 505), "If the name is empty the student should NOT be added");
     }
 
     @Test
