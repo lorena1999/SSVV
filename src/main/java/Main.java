@@ -17,8 +17,9 @@ public class Main {
         NotaXMLRepository fileRepository3 = new NotaXMLRepository(notaValidator, "note.xml");
 
         Service service = new Service(fileRepository1, fileRepository2, fileRepository3);
-        UI consola = new UI(service);
-        consola.run();
+        //UI consola = new UI(service);
+        //consola.run();
+        System.out.println(service.saveStudent("", "hui", 500));
 
         //PENTRU GUI
         // de avut un check: daca profesorul introduce sau nu saptamana la timp
