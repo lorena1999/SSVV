@@ -45,7 +45,7 @@ public class StudentTest {
     }
 
     @Test
-    public void testIdUnique()
+    public void testEntityValid()
     {
         assertEquals(1, service.saveStudent("3", "Petrica", 500), "If the id is unique the student should be added");
     }
@@ -57,21 +57,9 @@ public class StudentTest {
     }
 
     @Test
-    public void testIdNotEmpty()
-    {
-        assertEquals(1, service.saveStudent("5", "Petrica", 502), "If the id is NOT empty the student should be added");
-    }
-//aici pare sa mearga...
-    @Test
     public void testIdEmpty()
     {
         assertEquals(0, service.saveStudent("", "Petrica", 503), "If the id is empty the student should NOT be added");
-    }
-
-    @Test
-    public void testNameNotEmpty()
-    {
-        assertEquals(1, service.saveStudent("7", "Petrica", 504), "If the name is NOT empty the student should be added");
     }
 
     @Test
