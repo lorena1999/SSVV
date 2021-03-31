@@ -47,7 +47,7 @@ public class StudentTest {
     @Test
     public void testEntityValid()
     {
-        assertEquals(1, service.saveStudent("3", "Petrica", 500), "If the id is unique the student should be added");
+        assertEquals(1, service.saveStudent("3", "Petrica", 500), "The students should be added");
     }
 
     @Test
