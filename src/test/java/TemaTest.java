@@ -45,13 +45,13 @@ public class TemaTest {
 
 
     @Test
-    public void testDescriptionEmpty()
+    public void testInvalidAddTema()
     {
         assertEquals(0, service.saveTema("4", "", 5, 2), "If the description is empty the assignment should NOT be added");
     }
 
     @Test
-    public void testDescriptionNotEmpty()
+    public void testValidAddTema()
     {
         assertEquals(1, service.saveTema("5", "Desc1", 5, 2), "If the description is NOT empty the assignment should be added");
     }
