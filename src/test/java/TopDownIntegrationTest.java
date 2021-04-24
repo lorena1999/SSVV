@@ -20,7 +20,7 @@ import java.nio.file.StandardCopyOption;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class IntegrationTest {
+public class TopDownIntegrationTest {
 
     private Service service;
 
@@ -62,17 +62,12 @@ public class IntegrationTest {
     @Test
     public void testAddTema()
     {
+        service.saveStudent("3", "Petrica", 500);
         assertEquals(1, service.saveTema("5", "Desc1", 5, 2), "If the description is NOT empty the assignment should be added");
     }
 
     @Test //String idStudent, String idTema, double valNota, int predata, String feedback
-    public void testAddNota()
-    {
-        assertEquals(1, service.saveNota("1", "3", 9.5, 9, "Good"));
-    }
-
-    @Test //String idStudent, String idTema, double valNota, int predata, String feedback
-    public void testIntegration()
+    public void testAddGrade()
     {
         service.saveStudent("3", "Petrica", 500);
         service.saveTema("5", "Desc1", 5, 2);
